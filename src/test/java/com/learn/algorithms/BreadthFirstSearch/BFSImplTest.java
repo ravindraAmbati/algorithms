@@ -1,24 +1,57 @@
 package com.learn.algorithms.BreadthFirstSearch;
 
+import com.learn.algorithms.utility.ExtractURLs;
+import com.learn.algorithms.utility.ReadHTML;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import javax.print.DocFlavor;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
+
+import static java.text.NumberFormat.getCurrencyInstance;
 
 class BFSImplTest {
 
     private BFSImpl<Integer> testClassInteger = null;
     private BFSImpl<String> testClassString = null;
+    private BFSImpl<URL> testClassUrl = null;
 
     @BeforeEach
     void setUp() {
         testClassInteger = new BFSImpl<>();
         testClassString = new BFSImpl<>();
+        testClassUrl = new BFSImpl<>();
     }
 
     @AfterEach
     void tearDown() {
         testClassInteger = null;
         testClassString = null;
+        testClassUrl = null;
+    }
+
+    @Test
+    void webCrawler() throws IOException {
+        Node<URL> root = new Node<>(new URL("https://www.bbc.com"));
+        String parentRegex = "\\b(https://www.bbc.com?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
+        ExtractURLs.extractURLs(ReadHTML.readHTML(root.getValue()), parentRegex).forEach(
+                url -> root.addNeighbours(new Node<>(url))
+        );
+        ExtractURLs.extractHTTPURLs(ReadHTML.readHTML(root.getValue())).forEach(
+                url -> root.addNeighbours(new Node<>(url))
+        );
+        ExtractURLs.extractHTTPSURLs(ReadHTML.readHTML(root.getValue())).forEach(
+                url -> root.addNeighbours(new Node<>(url))
+        );
+        testClassUrl.bfs(root);
     }
 
     @Test
