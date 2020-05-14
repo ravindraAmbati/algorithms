@@ -3,5 +3,5 @@
 <h1>Algorithms</h1>
 
 <ol>
-    <li>Breadth First Search - BFS, Web Crawler(A Test Case)</li>
+    <li>Breadth First Search - <b>BFS</b> || <i><b>Web Crawler</b> - A Test Case</i></li>
 </ol>
