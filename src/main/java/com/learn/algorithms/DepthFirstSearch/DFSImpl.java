@@ -40,6 +40,6 @@ public class DFSImpl<T> implements DFS<T> {
 
     @Override
     public String dfs(List<Node<T>> nodes) {
-        throw new UnsupportedOperationException("his operation cannot be performed");
+        throw new UnsupportedOperationException("This operation cannot be performed");
     }
 }
