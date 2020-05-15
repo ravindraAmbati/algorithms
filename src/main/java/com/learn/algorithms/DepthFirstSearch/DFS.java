@@ -10,6 +10,6 @@ public interface DFS<T> {
 
     String dfs(Node<T> root);
 
-    String dfs(List<Node<T>> nodes);
+    String topologicalOrdering(List<Node<T>> nodes);
 
 }

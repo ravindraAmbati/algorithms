@@ -31,7 +31,7 @@ class TopologicalOrderingTest {
     }
 
     @Test
-    void dfs() {
+    void topologicalOrdering() {
 
         expected = "build -> test -> testClasses -> processTestResources -> compileTestJava -> classes -> processResources -> compileJava -> clean -> ";
 
@@ -68,7 +68,7 @@ class TopologicalOrderingTest {
         nodes.add(clean);
         nodes.add(processTestResources);
 
-        actual = testClass.dfs(nodes);
+        actual = testClass.topologicalOrdering(nodes);
         Assertions.assertEquals(expected, actual);
     }
 }

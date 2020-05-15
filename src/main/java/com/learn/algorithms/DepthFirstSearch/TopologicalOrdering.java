@@ -30,7 +30,7 @@ public class TopologicalOrdering<T> implements DFS<T> {
     }
 
     @Override
-    public String dfs(List<Node<T>> nodes) {
+    public String topologicalOrdering(List<Node<T>> nodes) {
 
         stack = new Stack<>();
         StringBuilder result = new StringBuilder();
