@@ -58,7 +58,7 @@ class BFSImplTest {
     @Test
     void bfsIntTest() {
 
-        expected = "2 3 4 5 6 7 8 9 10 11 ";
+        expected = "1 2 3 4 5 6 7 8 9 10 11 ";
 
         // init
         Node<Integer> integerNode1 = new Node<>(1);
@@ -93,7 +93,7 @@ class BFSImplTest {
     @Test
     void bsfStringTest(){
 
-        expected = "A B C D A1 A2 B3 B2 B1 E ";
+        expected = "R A B C D A1 A2 B3 B2 B1 E ";
 
         // init
         Node<String> a = new Node<>("A");
