@@ -14,9 +14,9 @@ import static java.text.NumberFormat.getCurrencyInstance;
 
 class BFSImplTest {
 
-    private BFSImpl<Integer> testClassInteger = null;
-    private BFSImpl<String> testClassString = null;
-    private BFSImpl<URL> testClassUrl = null;
+    private BFS<Integer> testClassInteger = null;
+    private BFS<String> testClassString = null;
+    private BFS<URL> testClassUrl = null;
 
     @BeforeEach
     void setUp() {

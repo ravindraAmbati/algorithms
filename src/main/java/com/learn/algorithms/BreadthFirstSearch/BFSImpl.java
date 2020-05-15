@@ -8,8 +8,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class BFSImpl<T> {
+public class BFSImpl<T> implements BFS<T> {
 
+    @Override
     public void bfs(Node<T> root){
 
         Queue<Node<T>> queue = new LinkedList<>();
