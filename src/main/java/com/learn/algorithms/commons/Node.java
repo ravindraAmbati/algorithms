@@ -1,4 +1,4 @@
-package com.learn.algorithms.BreadthFirstSearch;
+package com.learn.algorithms.commons;
 
 /* @author ravin @date 14-05-2020 @time 09:07 */
 
@@ -9,15 +9,15 @@ public class Node<T> {
 
     private T value;
     private boolean isVisited;
-    private List<Node<T>> neighbours;
+    private List<Node<T>> children;
 
     public Node(T value) {
         this.value = value;
-        this.neighbours = new ArrayList<Node<T>>();
+        this.children = new ArrayList<Node<T>>();
     }
 
     public void addNeighbours(Node<T> node){
-        this.neighbours.add(node);
+        this.children.add(node);
     }
     public T getValue() {
         return value;
@@ -35,12 +35,12 @@ public class Node<T> {
         isVisited = visited;
     }
 
-    public List<Node<T>> getNeighbours() {
-        return neighbours;
+    public List<Node<T>> getChildren() {
+        return children;
     }
 
-    public void setNeighbours(List<Node<T>> neighbours) {
-        this.neighbours = neighbours;
+    public void setChildren(List<Node<T>> children) {
+        this.children = children;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class Node<T> {
         return "Node{" +
                 "value=" + value +
                 ", isVisited=" + isVisited +
-                ", neighbours=" + neighbours +
+                ", neighbours=" + children +
                 '}';
     }
 }
