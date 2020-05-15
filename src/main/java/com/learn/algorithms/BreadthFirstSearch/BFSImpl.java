@@ -10,6 +10,8 @@ import java.util.Queue;
 
 public class BFSImpl<T> implements BFS<T> {
 
+    private static final String DELIMITER = " ";
+
     @Override
     public String bfs(Node<T> root) {
 
@@ -18,7 +20,7 @@ public class BFSImpl<T> implements BFS<T> {
 
         queue.add(root);
         root.setVisited(true);
-        result.append(root.getValue()).append(" ");
+        result.append(root.getValue()).append(DELIMITER);
 
         while (!queue.isEmpty()) {
 

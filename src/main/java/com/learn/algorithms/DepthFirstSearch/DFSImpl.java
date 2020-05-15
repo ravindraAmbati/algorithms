@@ -9,6 +9,8 @@ import java.util.Stack;
 
 public class DFSImpl<T> implements DFS<T> {
 
+    private static final String DELIMITER = " ";
+
     @Override
     public String dfs(Node<T> root) {
 
@@ -17,7 +19,7 @@ public class DFSImpl<T> implements DFS<T> {
 
         stack.push(root);
         root.setVisited(true);
-        result.append(root.getValue()).append(" ");
+        result.append(root.getValue()).append(DELIMITER);
 
         while (!stack.isEmpty()) {
 
