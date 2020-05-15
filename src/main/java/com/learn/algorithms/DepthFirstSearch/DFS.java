@@ -4,8 +4,12 @@ package com.learn.algorithms.DepthFirstSearch;
 
 import com.learn.algorithms.commons.Node;
 
+import java.util.List;
+
 public interface DFS<T> {
 
     String dfs(Node<T> root);
+
+    String dfs(List<Node<T>> nodes);
 
 }

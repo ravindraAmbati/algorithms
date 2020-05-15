@@ -37,4 +37,9 @@ public class DFSImpl<T> implements DFS<T> {
 
         return result.toString();
     }
+
+    @Override
+    public String dfs(List<Node<T>> nodes) {
+        throw new UnsupportedOperationException("his operation cannot be performed");
+    }
 }
