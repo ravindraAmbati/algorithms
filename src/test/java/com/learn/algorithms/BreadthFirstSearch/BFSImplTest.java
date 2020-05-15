@@ -4,6 +4,7 @@ import com.learn.algorithms.commons.Node;
 import com.learn.algorithms.utility.ExtractURLs;
 import com.learn.algorithms.utility.ReadHTML;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,12 +15,16 @@ import static java.text.NumberFormat.getCurrencyInstance;
 
 class BFSImplTest {
 
+    private String expected = null;
+    private String actual = null;
     private BFS<Integer> testClassInteger = null;
     private BFS<String> testClassString = null;
     private BFS<URL> testClassUrl = null;
 
     @BeforeEach
     void setUp() {
+        expected = null;
+        actual = null;
         testClassInteger = new BFSImpl<>();
         testClassString = new BFSImpl<>();
         testClassUrl = new BFSImpl<>();
@@ -27,6 +32,8 @@ class BFSImplTest {
 
     @AfterEach
     void tearDown() {
+        expected = null;
+        actual = null;
         testClassInteger = null;
         testClassString = null;
         testClassUrl = null;
@@ -50,6 +57,8 @@ class BFSImplTest {
 
     @Test
     void bfsIntTest() {
+
+        expected = "2 3 4 5 6 7 8 9 10 11 ";
 
         // init
         Node<Integer> integerNode1 = new Node<>(1);
@@ -77,11 +86,14 @@ class BFSImplTest {
         integerNode10.addNeighbours(integerNode11);
         integerNode11.addNeighbours(integerNode1);
 
-        testClassInteger.bfs(integerNode1);
+        actual = testClassInteger.bfs(integerNode1);
+        Assertions.assertEquals(expected,actual);
     }
 
     @Test
     void bsfStringTest(){
+
+        expected = "A B C D A1 A2 B3 B2 B1 E ";
 
         // init
         Node<String> a = new Node<>("A");
@@ -109,6 +121,7 @@ class BFSImplTest {
         d.addNeighbours(e);
         e.addNeighbours(r);
 
-        testClassString.bfs(r);
+        actual = testClassString.bfs(r);
+        Assertions.assertEquals(expected,actual);
     }
 }

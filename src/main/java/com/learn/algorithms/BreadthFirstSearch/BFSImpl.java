@@ -11,25 +11,27 @@ import java.util.Queue;
 public class BFSImpl<T> implements BFS<T> {
 
     @Override
-    public void bfs(Node<T> root){
+    public String bfs(Node<T> root) {
 
+        StringBuilder result = new StringBuilder();
         Queue<Node<T>> queue = new LinkedList<>();
 
         queue.add(root);
         root.setVisited(true);
 
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
 
             Node<T> actual = queue.remove();
-            List<Node<T>> neighbours = actual.getChildren();
+            List<Node<T>> children = actual.getChildren();
 
-            for(Node<T> node: neighbours){
-                if(!node.isVisited()){
+            for (Node<T> node : children) {
+                if (!node.isVisited()) {
                     queue.add(node);
                     node.setVisited(true);
-                    System.out.println(node.getValue());
+                    result.append(node.getValue()).append(" ");
                 }
             }
         }
+        return result.toString();
     }
 }
