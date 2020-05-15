@@ -5,5 +5,7 @@ package com.learn.algorithms.BreadthFirstSearch;
 import com.learn.algorithms.commons.Node;
 
 public interface BFS<T> {
+
     String bfs(Node<T> root);
+
 }
