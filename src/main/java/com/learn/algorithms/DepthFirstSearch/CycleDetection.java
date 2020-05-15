@@ -1,15 +1,15 @@
 package com.learn.algorithms.DepthFirstSearch;
 
-/* @author ravin @date 15-05-2020 @time 13:29 */
+/* @author ravin @date 15-05-2020 @time 17:23 */
 
 import com.learn.algorithms.commons.Node;
 
 import java.util.List;
 import java.util.Stack;
 
-public class TopologicalOrdering<T> implements DFS<T> {
+public class CycleDetection<T> implements DFS<T> {
 
-    private static final String DELIMITER = " -> ";
+    private static final String DELIMITER = " | ";
     private Stack<Node<T>> stack = null;
 
     @Override
@@ -17,36 +17,42 @@ public class TopologicalOrdering<T> implements DFS<T> {
         throw new UnsupportedOperationException("This operation cannot be performed");
     }
 
-    private void topologicalOrdering(Node<T> root) {
+    @Override
+    public String topologicalOrdering(List<Node<T>> nodes) {
+        throw new UnsupportedOperationException("This operation cannot be performed");
+    }
 
-        root.setVisited(true);
+    private void detectCycle(Node<T> root) {
+
+        root.setBeingVisited(true);
         List<Node<T>> children = root.getChildren();
         for (Node<T> node : children) {
+            if (node.isBeingVisited()) {
+                stack.push(node);
+                System.out.println("Cycle Detect at position: " + root.getValue() + "<->" + node.getValue());
+                return;
+            }
             if (!node.isVisited()) {
-                topologicalOrdering(node);
+                node.setVisited(true);
+                detectCycle(node);
             }
         }
         stack.push(root);
     }
 
     @Override
-    public String topologicalOrdering(List<Node<T>> nodes) {
+    public String detectCycle(List<Node<T>> nodes) {
 
         stack = new Stack<>();
         StringBuilder result = new StringBuilder();
         for (Node<T> node : nodes) {
             if (!node.isVisited()) {
-                topologicalOrdering(node);
+                detectCycle(node);
             }
         }
         while (!stack.isEmpty()) {
             result.append(stack.pop().getValue()).append(DELIMITER);
         }
         return result.toString();
-    }
-
-    @Override
-    public String detectCycle(List<Node<T>> nodes) {
-        throw new UnsupportedOperationException("This operation cannot be performed");
     }
 }

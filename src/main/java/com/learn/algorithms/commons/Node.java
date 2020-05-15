@@ -9,6 +9,7 @@ public class Node<T> {
 
     private T value;
     private boolean isVisited;
+    private boolean isBeingVisited;
     private List<Node<T>> children;
 
     public Node(T value) {
@@ -40,6 +41,14 @@ public class Node<T> {
         isVisited = visited;
     }
 
+    public boolean isBeingVisited() {
+        return isBeingVisited;
+    }
+
+    public void setBeingVisited(boolean beingVisited) {
+        isBeingVisited = beingVisited;
+    }
+
     public List<Node<T>> getChildren() {
         return children;
     }
@@ -56,4 +65,5 @@ public class Node<T> {
                 ", neighbours=" + children +
                 '}';
     }
+
 }

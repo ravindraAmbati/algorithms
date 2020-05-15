@@ -84,7 +84,6 @@ class DFSImplTest {
         Node<String> e = new Node<>("E");
 
         //chaining
-        //chaining
         r.addChildren(Arrays.asList(a, b, c, d));
         a.addChildren(Arrays.asList(a1, a2));
         b.addChildren(Arrays.asList(b3, b2, b1));

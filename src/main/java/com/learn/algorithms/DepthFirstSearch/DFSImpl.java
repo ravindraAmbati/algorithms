@@ -42,4 +42,9 @@ public class DFSImpl<T> implements DFS<T> {
     public String topologicalOrdering(List<Node<T>> nodes) {
         throw new UnsupportedOperationException("This operation cannot be performed");
     }
+
+    @Override
+    public String detectCycle(List<Node<T>> nodes) {
+        throw new UnsupportedOperationException("This operation cannot be performed");
+    }
 }

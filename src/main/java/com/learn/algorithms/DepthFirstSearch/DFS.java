@@ -12,4 +12,6 @@ public interface DFS<T> {
 
     String topologicalOrdering(List<Node<T>> nodes);
 
+    String detectCycle(List<Node<T>> nodes);
+
 }
