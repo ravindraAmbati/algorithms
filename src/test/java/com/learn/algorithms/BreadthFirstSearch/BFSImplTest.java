@@ -91,7 +91,7 @@ class BFSImplTest {
     }
 
     @Test
-    void bsfStringTest(){
+    void bfsStringTest(){
 
         expected = "R A B C D A1 A2 B3 B2 B1 E ";
 
