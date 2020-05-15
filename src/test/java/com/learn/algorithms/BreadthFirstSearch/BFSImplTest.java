@@ -1,15 +1,10 @@
 package com.learn.algorithms.BreadthFirstSearch;
 
 import com.learn.algorithms.commons.Node;
-import com.learn.algorithms.utility.ExtractURLs;
-import com.learn.algorithms.utility.ReadHTML;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-import java.net.URL;
 
 class BFSImplTest {
 
@@ -17,7 +12,6 @@ class BFSImplTest {
     private String actual = null;
     private BFS<Integer> testClassInteger = null;
     private BFS<String> testClassString = null;
-    private BFS<URL> testClassUrl = null;
 
     @BeforeEach
     void setUp() {
@@ -25,7 +19,6 @@ class BFSImplTest {
         actual = null;
         testClassInteger = new BFSImpl<>();
         testClassString = new BFSImpl<>();
-        testClassUrl = new BFSImpl<>();
     }
 
     @AfterEach
@@ -34,23 +27,6 @@ class BFSImplTest {
         actual = null;
         testClassInteger = null;
         testClassString = null;
-        testClassUrl = null;
-    }
-
-    @Test
-    void webCrawler() throws IOException {
-        Node<URL> root = new Node<>(new URL("https://www.bbc.com"));
-        String parentRegex = "\\b(https://www.bbc.com?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
-        ExtractURLs.extractURLs(ReadHTML.readHTML(root.getValue()), parentRegex).forEach(
-                url -> root.addNeighbours(new Node<>(url))
-        );
-        ExtractURLs.extractHTTPURLs(ReadHTML.readHTML(root.getValue())).forEach(
-                url -> root.addNeighbours(new Node<>(url))
-        );
-        ExtractURLs.extractHTTPSURLs(ReadHTML.readHTML(root.getValue())).forEach(
-                url -> root.addNeighbours(new Node<>(url))
-        );
-        testClassUrl.bfs(root);
     }
 
     @Test
