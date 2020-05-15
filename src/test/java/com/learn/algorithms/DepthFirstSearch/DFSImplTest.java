@@ -1,19 +1,12 @@
 package com.learn.algorithms.DepthFirstSearch;
 
-import com.learn.algorithms.BreadthFirstSearch.BFS;
-import com.learn.algorithms.BreadthFirstSearch.BFSImpl;
 import com.learn.algorithms.commons.Node;
-import com.learn.algorithms.utility.ExtractURLs;
-import com.learn.algorithms.utility.ReadHTML;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.net.URL;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class DFSImplTest {
 
@@ -73,11 +66,11 @@ class DFSImplTest {
         integerNode11.addNeighbours(integerNode1);
 
         actual = testClassInteger.dfs(integerNode1);
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void dfsStringTest(){
+    void dfsStringTest() {
 
         expected = "R A A1 A2 B B3 B2 B1 C D E ";
 
@@ -108,6 +101,6 @@ class DFSImplTest {
         e.addNeighbours(r);
 
         actual = testClassString.dfs(r);
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 }

@@ -25,13 +25,13 @@ public interface ExtractURLs {
     static Set<URL> extractHTTPURLs(String rawHTML) throws RuntimeException, MalformedURLException {
 
         String regex = "\\b(http?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
-        return extractURLs(rawHTML,regex);
+        return extractURLs(rawHTML, regex);
     }
 
     static Set<URL> extractHTTPSURLs(String rawHTML) throws RuntimeException, MalformedURLException {
 
         String regex = "\\b(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
-        return extractURLs(rawHTML,regex);
+        return extractURLs(rawHTML, regex);
     }
 
 }

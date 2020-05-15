@@ -7,7 +7,7 @@ import com.learn.algorithms.commons.Node;
 import java.util.List;
 import java.util.Stack;
 
-public class DFSImpl<T> implements DFS<T>{
+public class DFSImpl<T> implements DFS<T> {
 
     @Override
     public String dfs(Node<T> root) {
@@ -19,13 +19,13 @@ public class DFSImpl<T> implements DFS<T>{
         root.setVisited(true);
         result.append(root.getValue()).append(" ");
 
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
 
             Node<T> actual = stack.pop();
             List<Node<T>> children = actual.getChildren();
 
-            for (Node<T> node: children){
-                if(!node.isVisited()){
+            for (Node<T> node : children) {
+                if (!node.isVisited()) {
                     stack.push(node);
                     node.setVisited(true);
                     result.append(dfs(node));

@@ -11,8 +11,6 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.net.URL;
 
-import static java.text.NumberFormat.getCurrencyInstance;
-
 class BFSImplTest {
 
     private String expected = null;
@@ -87,11 +85,11 @@ class BFSImplTest {
         integerNode11.addNeighbours(integerNode1);
 
         actual = testClassInteger.bfs(integerNode1);
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void bfsStringTest(){
+    void bfsStringTest() {
 
         expected = "R A B C D A1 A2 B3 B2 B1 E ";
 
@@ -122,6 +120,6 @@ class BFSImplTest {
         e.addNeighbours(r);
 
         actual = testClassString.bfs(r);
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 }
