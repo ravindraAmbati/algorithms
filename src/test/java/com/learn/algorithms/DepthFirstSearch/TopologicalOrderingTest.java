@@ -47,14 +47,14 @@ class TopologicalOrderingTest {
         Node<String> build = new Node<>("build");
 
         //chaining
-        build.addNeighbours(test);
-        test.addNeighbours(testClasses);
-        testClasses.addNeighbours(processTestResources);
-        processTestResources.addNeighbours(compileTestJava);
-        compileTestJava.addNeighbours(classes);
-        classes.addNeighbours(processResources);
-        processResources.addNeighbours(compileJava);
-        compileJava.addNeighbours(clean);
+        build.addChild(test);
+        test.addChild(testClasses);
+        testClasses.addChild(processTestResources);
+        processTestResources.addChild(compileTestJava);
+        compileTestJava.addChild(classes);
+        classes.addChild(processResources);
+        processResources.addChild(compileJava);
+        compileJava.addChild(clean);
 
         List<Node<String>> nodes = new ArrayList<>();
 

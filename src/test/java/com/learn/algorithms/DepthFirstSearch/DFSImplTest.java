@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.net.URL;
+import java.util.Arrays;
 
 class DFSImplTest {
 
@@ -53,17 +54,12 @@ class DFSImplTest {
         Node<Integer> integerNode11 = new Node<>(11);
 
         //chaining
-        integerNode1.addNeighbours(integerNode2);
-        integerNode1.addNeighbours(integerNode3);
-        integerNode1.addNeighbours(integerNode4);
-        integerNode1.addNeighbours(integerNode5);
-        integerNode2.addNeighbours(integerNode6);
-        integerNode2.addNeighbours(integerNode7);
-        integerNode5.addNeighbours(integerNode8);
-        integerNode5.addNeighbours(integerNode9);
-        integerNode8.addNeighbours(integerNode10);
-        integerNode10.addNeighbours(integerNode11);
-        integerNode11.addNeighbours(integerNode1);
+        integerNode1.addChildren(Arrays.asList(integerNode2, integerNode3, integerNode4, integerNode5));
+        integerNode2.addChildren(Arrays.asList(integerNode6, integerNode7));
+        integerNode5.addChildren(Arrays.asList(integerNode8, integerNode9));
+        integerNode8.addChild(integerNode10);
+        integerNode10.addChild(integerNode11);
+        integerNode11.addChild(integerNode1);
 
         actual = testClassInteger.dfs(integerNode1);
         Assertions.assertEquals(expected, actual);
@@ -88,17 +84,12 @@ class DFSImplTest {
         Node<String> e = new Node<>("E");
 
         //chaining
-        r.addNeighbours(a);
-        r.addNeighbours(b);
-        a.addNeighbours(a1);
-        a.addNeighbours(a2);
-        b.addNeighbours(b3);
-        b.addNeighbours(b2);
-        b.addNeighbours(b1);
-        r.addNeighbours(c);
-        r.addNeighbours(d);
-        d.addNeighbours(e);
-        e.addNeighbours(r);
+        //chaining
+        r.addChildren(Arrays.asList(a, b, c, d));
+        a.addChildren(Arrays.asList(a1, a2));
+        b.addChildren(Arrays.asList(b3, b2, b1));
+        d.addChild(e);
+        e.addChild(r);
 
         actual = testClassString.dfs(r);
         Assertions.assertEquals(expected, actual);

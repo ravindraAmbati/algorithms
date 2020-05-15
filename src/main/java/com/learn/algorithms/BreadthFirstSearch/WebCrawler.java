@@ -34,7 +34,7 @@ public class WebCrawler<T> implements BFS<T> {
             Node<URL> actual = queue.remove();
             try {
                 ExtractURLs.extractHTTPURLs(ReadHTML.readHTML(actual.getValue())).forEach(
-                        url -> actual.addNeighbours(new Node<>(url))
+                        url -> actual.addChild(new Node<>(url))
                 );
             } catch (IOException e) {
                 System.out.println("Unreachable " + actual.getValue());

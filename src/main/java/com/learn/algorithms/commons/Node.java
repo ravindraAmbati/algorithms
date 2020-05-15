@@ -16,8 +16,12 @@ public class Node<T> {
         this.children = new ArrayList<Node<T>>();
     }
 
-    public void addNeighbours(Node<T> node) {
+    public void addChild(Node<T> node) {
         this.children.add(node);
+    }
+
+    public void addChildren(List<Node<T>> nodes) {
+        this.children.addAll(nodes);
     }
 
     public T getValue() {
