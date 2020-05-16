@@ -14,7 +14,7 @@ class DijkstraTest {
 
     private List<Node> expected;
     private List<Node> actual;
-    private Dijkstra testClass;
+    private ShortestPath testClass;
 
     @BeforeEach
     void setUp() {
