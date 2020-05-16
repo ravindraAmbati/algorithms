@@ -2,6 +2,16 @@
 
 <h1>Algorithms</h1>
 
-<ol>
-    <li>Breadth First Search - <b>BFS</b> || <i><b>Web Crawler</b> - A Test Case</i></li>
-</ol>
+<h4>BFS - Breadth First Search</h4>
+    <ol>
+        <li>Breadth First Search</li>
+        <li>WebCrawler</li>
+    </ol>
+    
+<h4>DFS - Depth First Search</h4>
+    <ol>
+        <li>Depth First Search</li>
+        <li>Cycle Detection</li>
+        <li>Maze Way Finder</li>
+        <li>Topological Ordering</li>
+    </ol>
