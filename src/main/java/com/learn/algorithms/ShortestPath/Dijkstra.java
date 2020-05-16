@@ -17,6 +17,11 @@ public class Dijkstra implements ShortestPath {
         return getShortestPathTo(target);
     }
 
+    @Override
+    public List<Node> computeShortestPath(List<Node> nodes, List<Edge> edges, Node target) {
+        throw new UnsupportedOperationException("This operation cannot be performed");
+    }
+
     private void computeShortestPath(Node root) {
 
         root.setDistance(0d);
