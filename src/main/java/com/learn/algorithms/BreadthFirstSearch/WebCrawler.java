@@ -2,7 +2,7 @@ package com.learn.algorithms.BreadthFirstSearch;
 
 /* @author ravin @date 15-05-2020 @time 10:43 */
 
-import com.learn.algorithms.commons.Node;
+import com.learn.algorithms.common.Node;
 import com.learn.algorithms.utility.ExtractURLs;
 import com.learn.algorithms.utility.ReadHTML;
 

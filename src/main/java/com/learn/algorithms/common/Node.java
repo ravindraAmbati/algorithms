@@ -1,4 +1,4 @@
-package com.learn.algorithms.commons;
+package com.learn.algorithms.common;
 
 /* @author ravin @date 14-05-2020 @time 09:07 */
 

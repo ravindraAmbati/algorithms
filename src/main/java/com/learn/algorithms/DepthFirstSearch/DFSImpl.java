@@ -2,7 +2,7 @@ package com.learn.algorithms.DepthFirstSearch;
 
 /* @author ravin @date 15-05-2020 @time 08:49 */
 
-import com.learn.algorithms.commons.Node;
+import com.learn.algorithms.common.Node;
 import com.learn.algorithms.utility.MazeFileReader;
 
 import java.util.List;

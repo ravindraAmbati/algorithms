@@ -2,7 +2,7 @@ package com.learn.algorithms.BreadthFirstSearch;
 
 /* @author ravin @date 14-05-2020 @time 09:12 */
 
-import com.learn.algorithms.commons.Node;
+import com.learn.algorithms.common.Node;
 
 import java.util.LinkedList;
 import java.util.List;

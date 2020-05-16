@@ -1,6 +1,6 @@
 package com.learn.algorithms.BreadthFirstSearch;
 
-import com.learn.algorithms.commons.Node;
+import com.learn.algorithms.common.Node;
 import org.junit.jupiter.api.*;
 
 import java.net.MalformedURLException;
