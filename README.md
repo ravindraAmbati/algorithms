@@ -15,3 +15,9 @@
         <li>Maze Way Finder</li>
         <li>Topological Ordering</li>
     </ol>
+    
+<h4>SP - Shortest Path</h4>
+    <ol>
+        <li>BellmenFord</li>
+        <li>Dijkstra</li>
+    </ol>    
