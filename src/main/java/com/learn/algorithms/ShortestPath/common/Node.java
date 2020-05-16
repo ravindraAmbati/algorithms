@@ -9,7 +9,6 @@ public class Node implements Comparable<Node> {
 
     private String name;
     private List<Edge> neighbours = new ArrayList<>();
-    private boolean visited;
     private Node predecessor;
     private Double distance = Double.MAX_VALUE;
 
@@ -35,14 +34,6 @@ public class Node implements Comparable<Node> {
 
     public void setNeighbours(List<Edge> neighbours) {
         this.neighbours = neighbours;
-    }
-
-    public boolean isVisited() {
-        return visited;
-    }
-
-    public void setVisited(boolean visited) {
-        this.visited = visited;
     }
 
     public Node getPredecessor() {
